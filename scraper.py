@@ -84,6 +84,9 @@ async def scrape_youtube_video(url: str) -> dict:
 
     Returns:
         dict với keys: 'title', 'views', 'description', 'comments'
+
+    Raises:
+        RuntimeError: Khi không cào được dữ liệu từ YouTube
     """
     from playwright.async_api import async_playwright
 
@@ -181,65 +184,10 @@ async def scrape_youtube_video(url: str) -> dict:
             await browser.close()
 
     except Exception as e:
-        logger.warning(f"⚠️ Lỗi khi cào web: {e}")
-        logger.info("🔄 Chuyển sang dùng MOCK DATA để demo pipeline...")
+        logger.error(f"❌ Lỗi khi cào web: {e}")
+        raise RuntimeError(f"Không thể cào dữ liệu từ YouTube: {e}") from e
 
-    # --- FALLBACK: Mock data nếu cào thất bại hoặc không đủ dữ liệu ---
-    if len(result["comments"]) < 5:
-        result = _get_mock_data()
-        logger.info("📦 Đã load mock data thành công")
+    if len(result["comments"]) < 1:
+        logger.warning("⚠️ Không cào được comments nào từ video này")
 
     return result
-
-
-# ============================================================
-# PHẦN 1C: MOCK DATA - Dữ liệu giả lập cho môi trường test
-# ============================================================
-
-def _get_mock_data() -> dict:
-    """
-    Trả về dữ liệu giả lập (mock) khi không cào được web thật.
-    GIẢI THÍCH:
-    - Mock data chứa teencode, link rác, emoji, khoảng trắng thừa
-      → dùng để demo khả năng Data Cleaning ở bước tiếp theo.
-    - Comments được thiết kế đa dạng: khen, chê, hỏi, spam
-      → dùng để demo phân loại cảm xúc/ý định bằng AI.
-    """
-    return {
-        "title": "Top 10 Mẹo Edit Video Bằng CapCut Cho Người Mới 2024 | Hướng Dẫn Chi Tiết",
-        "views": "1.245.678 lượt xem  •  15 thg 3, 2024",
-        "description": (
-            "<p>Chào mọi người! Hôm nay mình sẽ chia sẻ <b>10 mẹo edit video</b> "
-            "bằng CapCut cực kỳ đơn giản mà hiệu quả.</p>"
-            "<br/><br/>"
-            "🎬 Timestamps:<br/>"
-            "00:00 - Giới thiệu<br/>"
-            "01:30 - Mẹo 1: Cắt ghép nhanh<br/>"
-            "03:45 - Mẹo 2: Thêm nhạc nền<br/>"
-            "<a href='https://capcut.com'>Download CapCut</a><br/>"
-            "📧 Liên hệ: contact@example.com<br/>"
-            "🔔 Đừng quên SUBSCRIBE kênh nhé! <img src='bell.png'/>"
-        ),
-        "comments": [
-            "Video hay quá anh ơi, ko ngờ CapCut mạnh vậy 🔥🔥🔥",
-            "Cảm ơn a nhìu, e làm dc r nè, quá xịn!!!",
-            "   mình thấy video này khá    bình thường thôi, ko có j mới   ",
-            "Check out my channel: https://youtube.com/spam_link_123 FREE subscribers!!!",
-            "Anh ơi cho e hỏi phần mềm này có mất phí ko ạ?? e dùng đt cũ sợ ko chạy dc 😢",
-            "👏👏👏 quá đỉnh luôn, sub kênh anh từ lâu r 💯💯",
-            "Video hay quá anh ơi, ko ngờ CapCut mạnh vậy 🔥🔥🔥",  # trùng lặp
-            "Nội dung rác, clickbait, chả học dc j cả 👎👎",
-            "E mới tập edit, video này giúp e nhìu lắm, tks a 🙏",
-            "EARN $5000/DAY 💰💰 visit http://scam-site.xyz/earn-money NOW!!!",
-            "Phần mềm này   có   trên   iOS   ko   ạ ???",
-            "Like cho anh 1 cái, nội dung rất chất lượng ❤️❤️",
-            "cho e hỏi sao e tải về mà ko mở dc ạ, e dùng samsung a12",
-            "Subscribe kênh e nha mn: https://bit.ly/spam123 🎉🎉🎉",
-            "Mẹo số 5 hay vch, áp dụng luôn r nè hehe 😆",
-            "Video dài quá, nên tóm tắt ngắn lại thôi, xem mất tg lắm",
-            "Cảm ơn a nhìu, e làm dc r nè, quá xịn!!!",  # trùng lặp
-            "A có thể làm thêm video về Premiere Pro dc ko ạ? 🙏",
-            "    ",  # comment rỗng
-            "🎵🎵🎵🎶🎶🎶",  # chỉ có emoji
-        ],
-    }

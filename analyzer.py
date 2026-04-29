@@ -90,7 +90,7 @@ Trả về JSON object với format:
 # PHẦN 3B: GỌI API VỚI TỐI ƯU CHI PHÍ
 # ============================================================
 
-def analyze_metadata(metadata: dict, client: OpenAI = None) -> dict:
+def analyze_metadata(metadata: dict, client: OpenAI) -> dict:
     """
     Gọi API để phân tích metadata video.
 
@@ -101,11 +101,18 @@ def analyze_metadata(metadata: dict, client: OpenAI = None) -> dict:
 
     Args:
         metadata: dict chứa title, views, description đã sạch
-        client: OpenAI client instance (None = dùng mock)
+        client: OpenAI client instance (BẮT BUỘC)
 
     Returns:
         dict chứa kết quả phân tích (chủ đề, từ khóa, tóm tắt)
+
+    Raises:
+        ValueError: Khi không có OpenAI client
+        RuntimeError: Khi API call thất bại
     """
+    if client is None:
+        raise ValueError("Cần cung cấp OPENAI_API_KEY để chạy phân tích AI")
+
     logger.info("🤖 Gọi API phân tích Metadata...")
 
     user_prompt = METADATA_USER_TEMPLATE.format(
@@ -115,10 +122,6 @@ def analyze_metadata(metadata: dict, client: OpenAI = None) -> dict:
     )
 
     try:
-        if client is None:
-            logger.info("  ℹ️ Không có API key → dùng mock response")
-            return _mock_metadata_analysis(metadata)
-
         response = client.chat.completions.create(
             model="gpt-4o-mini",  # Model rẻ nhất có hỗ trợ JSON mode
             messages=[
@@ -136,11 +139,10 @@ def analyze_metadata(metadata: dict, client: OpenAI = None) -> dict:
 
     except Exception as e:
         logger.error(f"  ❌ Lỗi API Metadata: {e}")
-        logger.info("  🔄 Fallback về mock response...")
-        return _mock_metadata_analysis(metadata)
+        raise RuntimeError(f"API call thất bại: {e}") from e
 
 
-def analyze_comments_batch(comments: list, client: OpenAI = None) -> dict:
+def analyze_comments_batch(comments: list, client: OpenAI) -> dict:
     """
     Gọi API phân tích TẤT CẢ comments trong 1 lần (BATCHING).
 
@@ -159,11 +161,18 @@ def analyze_comments_batch(comments: list, client: OpenAI = None) -> dict:
 
     Args:
         comments: Danh sách comments đã sạch
-        client: OpenAI client instance
+        client: OpenAI client instance (BẮT BUỘC)
 
     Returns:
         dict chứa mảng comments đã phân loại
+
+    Raises:
+        ValueError: Khi không có OpenAI client
+        RuntimeError: Khi API call thất bại
     """
+    if client is None:
+        raise ValueError("Cần cung cấp OPENAI_API_KEY để chạy phân tích AI")
+
     logger.info(f"🤖 Gọi API phân tích {len(comments)} comments (BATCHED)...")
 
     # --- Đánh số comments để AI phân biệt ranh giới ---
@@ -177,10 +186,6 @@ def analyze_comments_batch(comments: list, client: OpenAI = None) -> dict:
     )
 
     try:
-        if client is None:
-            logger.info("  ℹ️ Không có API key → dùng mock response")
-            return _mock_comments_analysis(comments)
-
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
@@ -198,59 +203,4 @@ def analyze_comments_batch(comments: list, client: OpenAI = None) -> dict:
 
     except Exception as e:
         logger.error(f"  ❌ Lỗi API Comments: {e}")
-        logger.info("  🔄 Fallback về mock response...")
-        return _mock_comments_analysis(comments)
-
-
-# ============================================================
-# PHẦN 3C: MOCK RESPONSES (cho demo khi không có API key)
-# ============================================================
-
-def _mock_metadata_analysis(metadata: dict) -> dict:
-    """Mock kết quả phân tích metadata cho demo."""
-    return {
-        "chu_de_chinh": "Hướng dẫn chỉnh sửa video bằng CapCut cho người mới bắt đầu",
-        "tu_khoa": ["CapCut", "edit video", "người mới"],
-        "tom_tat": (
-            "Video hướng dẫn 10 mẹo chỉnh sửa video bằng phần mềm CapCut, "
-            "nhắm đến đối tượng người mới bắt đầu. Nội dung bao gồm các kỹ thuật "
-            "cắt ghép, thêm nhạc nền và các hiệu ứng cơ bản."
-        ),
-    }
-
-
-def _mock_comments_analysis(comments: list) -> dict:
-    """
-    Mock kết quả phân tích comments cho demo.
-    Phân loại dựa trên keyword matching đơn giản.
-    """
-    results = []
-    for i, comment in enumerate(comments):
-        lower = comment.lower()
-
-        # Phân loại cảm xúc dựa trên keyword
-        if any(w in lower for w in ["hay", "xịn", "đỉnh", "chất", "like", "thanks", "cảm ơn"]):
-            cam_xuc = "Tích cực"
-        elif any(w in lower for w in ["rác", "clickbait", "dài", "bình thường", "chê"]):
-            cam_xuc = "Tiêu cực"
-        else:
-            cam_xuc = "Trung lập"
-
-        # Phân loại ý định
-        if any(w in lower for w in ["hỏi", "sao", "không", "ạ", "?"]):
-            y_dinh = "Hỏi đáp"
-        elif cam_xuc == "Tích cực":
-            y_dinh = "Khen ngợi"
-        elif cam_xuc == "Tiêu cực":
-            y_dinh = "Chê bai"
-        else:
-            y_dinh = "Hỏi đáp"
-
-        results.append({
-            "stt": i + 1,
-            "noi_dung": comment,
-            "cam_xuc": cam_xuc,
-            "y_dinh": y_dinh,
-        })
-
-    return {"comments": results}
+        raise RuntimeError(f"API call thất bại: {e}") from e

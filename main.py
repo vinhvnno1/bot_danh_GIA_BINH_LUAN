@@ -12,15 +12,17 @@
 ║  └──────────┘   └──────────┘   └──────────┘   └──────────┘         ║
 ║                                                                      ║
 ║  CÁCH CHẠY:                                                         ║
-║  1. Có API key:  OPENAI_API_KEY=sk-xxx python main.py                ║
-║  2. Demo mode:   python main.py  (dùng mock data + mock API)        ║
-║  3. Custom URL:  python main.py --url "https://youtube.com/watch?v=" ║
+║  1. OPENAI_API_KEY=sk-xxx python main.py                             ║
+║  2. Custom URL: python main.py --url "https://youtube.com/watch?v="  ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 
 YÊU CẦU CÀI ĐẶT:
   pip install playwright openai pandas
   playwright install chromium
+
+YÊU CẦU BIẾN MÔI TRƯỜNG:
+  export OPENAI_API_KEY=sk-xxx
 """
 
 import asyncio
@@ -45,7 +47,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# URL mặc định để demo (video tiếng Việt phổ biến)
+# URL mặc định để phân tích
 DEFAULT_URL = "https://youtube.com/shorts/rr2qgUTd4zo?si=_Muw5iZ0fs-o5ruI"
 OUTPUT_FILE = "competitor_analysis_pipeline.json"
 
@@ -73,9 +75,22 @@ async def run_pipeline(url: str = None):
     Step 4 → Output: Gộp kết quả → JSON file
     """
     target_url = url or DEFAULT_URL
+
+    # --- Kiểm tra API key trước khi bắt đầu ---
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        logger.error("❌ Thiếu OPENAI_API_KEY! Hãy set biến môi trường:")
+        logger.error("   export OPENAI_API_KEY=sk-xxx")
+        logger.error("   hoặc: OPENAI_API_KEY=sk-xxx python main.py")
+        sys.exit(1)
+
+    from openai import OpenAI
+    client = OpenAI(api_key=api_key)
+
     logger.info("=" * 65)
     logger.info("🚀 BẮT ĐẦU PIPELINE PHÂN TÍCH VIDEO ĐỐI THỦ")
     logger.info(f"🔗 URL: {target_url}")
+    logger.info(f"🔑 API Key: {api_key[:8]}...{api_key[-4:]}")
     logger.info("=" * 65)
 
     # ==========================================
@@ -108,16 +123,6 @@ async def run_pipeline(url: str = None):
     # ==========================================
     logger.info("\n📌 STEP 3/4: AI Analysis (Prompt Engineering)...")
     logger.info("-" * 40)
-
-    # Kiểm tra API key → quyết định dùng real API hay mock
-    api_key = os.environ.get("OPENAI_API_KEY")
-    client = None
-    if api_key:
-        from openai import OpenAI
-        client = OpenAI(api_key=api_key)
-        logger.info("  🔑 Phát hiện OPENAI_API_KEY → dùng real API")
-    else:
-        logger.info("  ⚠️ Không có OPENAI_API_KEY → dùng mock response (demo mode)")
 
     # 3a. Phân tích metadata (1 API call)
     metadata_analysis = analyze_metadata(clean_meta, client)
