@@ -1,0 +1,174 @@
+{
+  "pipeline_info": {
+    "project": "Hệ thống Phân tích Video Đối thủ",
+    "version": "1.0.0",
+    "author": "AI Data Engineer",
+    "generated_at": "2026-04-29T23:05:46.911581",
+    "source_url": "https://youtube.com/shorts/rr2qgUTd4zo?si=_Muw5iZ0fs-o5ruI",
+    "pipeline_steps": [
+      "Web Scraping (Playwright)",
+      "Data Cleaning (Regex)",
+      "AI Analysis (GPT-4o-mini + Batching)",
+      "JSON Database Export"
+    ]
+  },
+  "metadata": {
+    "raw": {
+      "title": "Top 10 Mẹo Edit Video Bằng CapCut Cho Người Mới 2024 | Hướng Dẫn Chi Tiết",
+      "views": "1.245.678 lượt xem  •  15 thg 3, 2024",
+      "description_length": 371
+    },
+    "cleaned": {
+      "title": "Top 10 Mẹo Edit Video Bằng CapCut Cho Người Mới 2024 | Hướng Dẫn Chi Tiết",
+      "views": "1.245.678",
+      "description": "Chào mọi người! Hôm nay mình sẽ chia sẻ 10 mẹo edit video bằng CapCut cực kỳ đơn giản mà hiệu quả. 🎬 Timestamps: 00:00 - Giới thiệu 01:30 - Mẹo 1: Cắt ghép nhanh 03:45 - Mẹo 2: Thêm nhạc nền Download CapCut 📧 Liên hệ: 🔔 Đừng quên SUBSCRIBE kênh nhé!"
+    },
+    "ai_analysis": {
+      "chu_de_chinh": "Hướng dẫn chỉnh sửa video bằng CapCut cho người mới bắt đầu",
+      "tu_khoa": [
+        "CapCut",
+        "edit video",
+        "người mới"
+      ],
+      "tom_tat": "Video hướng dẫn 10 mẹo chỉnh sửa video bằng phần mềm CapCut, nhắm đến đối tượng người mới bắt đầu. Nội dung bao gồm các kỹ thuật cắt ghép, thêm nhạc nền và các hiệu ứng cơ bản."
+    }
+  },
+  "comments": {
+    "statistics": {
+      "raw_count": 20,
+      "after_cleaning": 16,
+      "removed": 4,
+      "api_calls_used": 1,
+      "api_calls_saved": 15
+    },
+    "cleaned_list": [
+      "Video hay quá anh ơi, không ngờ CapCut mạnh vậy",
+      "Cảm ơn anh nhiều, em làm được rồi nè, quá xịn!",
+      "mình thấy video này khá bình thường thôi, không có gì mới",
+      "Check out my channel: FREE subscribers!",
+      "Anh ơi cho em hỏi phần mềm này có mất phí không ạ? em dùng điện thoại cũ sợ không chạy được",
+      "quá đỉnh luôn, sub kênh anh từ lâu rồi",
+      "Nội dung rác, clickbait, chả học được gì cả",
+      "em mới tập edit, video này giúp em nhiều lắm, thanks anh",
+      "EARN $5000/DAY visit NOW!",
+      "Phần mềm này có trên iOS không ạ ?",
+      "Like cho anh 1 cái, nội dung rất chất lượng",
+      "cho em hỏi sao em tải về mà không mở được ạ, em dùng samsung a12",
+      "Subscribe kênh em nha mọi người:",
+      "Mẹo số 5 hay vãi chưởng, áp dụng luôn rồi nè hehe",
+      "Video dài quá, nên tóm tắt ngắn lại thôi, xem mất thời gian lắm",
+      "anh có thể làm thêm video về Premiere Pro được không ạ?"
+    ],
+    "ai_analysis": {
+      "comments": [
+        {
+          "stt": 1,
+          "noi_dung": "Video hay quá anh ơi, không ngờ CapCut mạnh vậy",
+          "cam_xuc": "Tích cực",
+          "y_dinh": "Hỏi đáp"
+        },
+        {
+          "stt": 2,
+          "noi_dung": "Cảm ơn anh nhiều, em làm được rồi nè, quá xịn!",
+          "cam_xuc": "Tích cực",
+          "y_dinh": "Khen ngợi"
+        },
+        {
+          "stt": 3,
+          "noi_dung": "mình thấy video này khá bình thường thôi, không có gì mới",
+          "cam_xuc": "Tiêu cực",
+          "y_dinh": "Hỏi đáp"
+        },
+        {
+          "stt": 4,
+          "noi_dung": "Check out my channel: FREE subscribers!",
+          "cam_xuc": "Trung lập",
+          "y_dinh": "Hỏi đáp"
+        },
+        {
+          "stt": 5,
+          "noi_dung": "Anh ơi cho em hỏi phần mềm này có mất phí không ạ? em dùng điện thoại cũ sợ không chạy được",
+          "cam_xuc": "Trung lập",
+          "y_dinh": "Hỏi đáp"
+        },
+        {
+          "stt": 6,
+          "noi_dung": "quá đỉnh luôn, sub kênh anh từ lâu rồi",
+          "cam_xuc": "Tích cực",
+          "y_dinh": "Khen ngợi"
+        },
+        {
+          "stt": 7,
+          "noi_dung": "Nội dung rác, clickbait, chả học được gì cả",
+          "cam_xuc": "Tiêu cực",
+          "y_dinh": "Chê bai"
+        },
+        {
+          "stt": 8,
+          "noi_dung": "em mới tập edit, video này giúp em nhiều lắm, thanks anh",
+          "cam_xuc": "Tích cực",
+          "y_dinh": "Khen ngợi"
+        },
+        {
+          "stt": 9,
+          "noi_dung": "EARN $5000/DAY visit NOW!",
+          "cam_xuc": "Trung lập",
+          "y_dinh": "Hỏi đáp"
+        },
+        {
+          "stt": 10,
+          "noi_dung": "Phần mềm này có trên iOS không ạ ?",
+          "cam_xuc": "Trung lập",
+          "y_dinh": "Hỏi đáp"
+        },
+        {
+          "stt": 11,
+          "noi_dung": "Like cho anh 1 cái, nội dung rất chất lượng",
+          "cam_xuc": "Tích cực",
+          "y_dinh": "Khen ngợi"
+        },
+        {
+          "stt": 12,
+          "noi_dung": "cho em hỏi sao em tải về mà không mở được ạ, em dùng samsung a12",
+          "cam_xuc": "Trung lập",
+          "y_dinh": "Hỏi đáp"
+        },
+        {
+          "stt": 13,
+          "noi_dung": "Subscribe kênh em nha mọi người:",
+          "cam_xuc": "Trung lập",
+          "y_dinh": "Hỏi đáp"
+        },
+        {
+          "stt": 14,
+          "noi_dung": "Mẹo số 5 hay vãi chưởng, áp dụng luôn rồi nè hehe",
+          "cam_xuc": "Tích cực",
+          "y_dinh": "Khen ngợi"
+        },
+        {
+          "stt": 15,
+          "noi_dung": "Video dài quá, nên tóm tắt ngắn lại thôi, xem mất thời gian lắm",
+          "cam_xuc": "Tiêu cực",
+          "y_dinh": "Hỏi đáp"
+        },
+        {
+          "stt": 16,
+          "noi_dung": "anh có thể làm thêm video về Premiere Pro được không ạ?",
+          "cam_xuc": "Trung lập",
+          "y_dinh": "Hỏi đáp"
+        }
+      ]
+    },
+    "sentiment_summary": {
+      "tich_cuc": 6,
+      "tieu_cuc": 3,
+      "trung_lap": 7
+    }
+  },
+  "cost_optimization": {
+    "technique": "Batching - gộp tất cả comments vào 1 API call",
+    "estimated_calls_without_batching": 17,
+    "actual_calls_with_batching": 2,
+    "savings_percentage": 88.2
+  }
+}
