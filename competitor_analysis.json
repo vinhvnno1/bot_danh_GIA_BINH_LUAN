@@ -1,0 +1,203 @@
+{
+  "pipeline_info": {
+    "project": "Hệ thống Phân tích Video Đối thủ (YouTube)",
+    "version": "2.0.0",
+    "author": "AI Data Engineer",
+    "generated_at": "2026-04-30T17:01:11.929472",
+    "source_url": "https://youtu.be/1VMNzrLmBhQ?si=_K-IEgRRK_50IvlU",
+    "ai_provider": "NVIDIA NIM (Llama 3.1 405B)",
+    "pipeline_steps": [
+      "Web Scraping (Playwright + Anti-Bot)",
+      "Data Cleaning (Regex + Teencode Normalization)",
+      "AI Analysis (Gemini + Super Batching)",
+      "JSON Database Export"
+    ]
+  },
+  "metadata": {
+    "raw": {
+      "title": "#TheFirstStep EP 8 | CEO Dat Bike: \"Cuộc đời phải rực rỡ\" | VnExpress",
+      "views": "21.750 lượt xem",
+      "description_length": 1278
+    },
+    "cleaned": {
+      "title": "#TheFirstStep EP 8 | CEO Dat Bike: \"Cuộc đời phải rực rỡ\" | VnExpress",
+      "views": "21.750",
+      "description": "Bỏ big tech để đi tìm 0,001% khả năng \"rực rỡ\" với startup, càng tìm hiểu càng thấy chặng đường phải đi quá xa, Nguyễn Bá Cảnh Sơn - Founder & CEO Dat Bike từng ngày tỉnh giấc với suy nghĩ “không làm nữa”. #TheFirstStep #VnExpress #vneGO #DatBike #xemaydien ------------------\nBáo VnExpress:\n🖥Website: 💻 Fanpage: / congdongvnexpress 💻 Youtube: 💻TikTok: / vnexpress.official © Bản quyền thuộc về Báo VnExpress ☞ vui lòng không reup!\n© Copyright by VnExpress ☞ Do not Reup!\nKhám phá podcast\n8 tập\nThe First Step\nBáo Điện Tử VnExpress\nBản chép lời Theo dõi nội dung video bằng bản chép lời. Hiện bản chép lời\nBáo Điện Tử VnExpress\n152 N người đăng ký\nVideo\nGiới thiệu\nFacebook\nHelp Us 1 Million Subscribers\nTiktok\n#TheFirstStep EP 6 | Kẻ thách đấu ChatGPT, mơ giấc mơ AI Việt | VnExpress\ncủa Báo Điện Tử VnExpress\n#TheFirstStep EP 5 | Chủ tịch chuỗi Long Châu: \"Từng tự hỏi mình có thực sự giỏi\" | VnExpress\ncủa Báo Điện Tử VnExpress\n#TheFirstStep EP 4 | Hai lần \"tất tay\" của người đưa xiếc Việt ra thế giới | VnExpress\ncủa Báo Điện Tử VnExpress\n8\nThe First Step\ncủa Báo Điện Tử VnExpress\nPodcast Tài chính cá nhân | Cách giảm áp lực nợ khi lãi thả nổi tăng cao | VnExpress\ncủa Báo Điện Tử VnExpress\nẨn bớt"
+    },
+    "ai_analysis": {
+      "chu_de_chinh": "Cuộc đời phải rực rỡ với startup Dat Bike",
+      "tu_khoa": [
+        "Dat Bike",
+        "Startup",
+        "Khởi nghiệp"
+      ],
+      "tom_tat": "Video này nói về hành trình của CEO Dat Bike, Nguyễn Bá Cảnh Sơn, và cách anh xây dựng thương hiệu xe máy điện Dat Bike. Anh chia sẻ về những khó khăn và thách thức mà anh gặp phải, nhưng cũng về sự kiên định và đam mê của mình.",
+      "danh_gia_tiem_nang": "Video này có tiềm năng viral và engagement cao vì nó truyền cảm hứng và động lực cho người xem, đặc biệt là những người trẻ tuổi và những người quan tâm đến khởi nghiệp và đổi mới."
+    }
+  },
+  "comments": {
+    "statistics": {
+      "raw_count": 20,
+      "after_cleaning": 20,
+      "removed": 0,
+      "api_calls_used": 1,
+      "api_calls_saved": 20
+    },
+    "cleaned_list": [
+      "Mình không hiểu tại sao mọi người lại cắt 1 câu nói trong cả 1 cuộc nói chuyện dài như này rồi phán xét anh Sơn này kia. Chắc phải mặc vest lên chương trình rồi chia sẻ tầm nhìn vĩ đại trên trời này kia mới hợp ý mấy bạn. Ai theo dõi Datbike lâu thì biết trước giờ anh Sơn vẫn đơn giản, mộc mạc thế và nói được làm được.",
+      "Theo dõi hành trình của Dat Bike từ đầu mới thấy Sơn rất biết mình cần gì và đuổi theo nó 1 cách rất nhất quán. Thay vì làm xe nịnh mắt, chuẩn gu người dùng còn hiệu năng sao mặc kệ, bạn này chấp nhận bị chê thiết kế để ưu tiên pin khủng và công suất thực. Đó là bản lĩnh của người làm kỹ thuật, không chạy theo bề nổi. Cổ điển, tôn trọng",
+      "Thị trường khởi nghiệp hiện nay thì Dat Bike là một cái tên rất sáng, dự kiến là sẽ còn vươn xa hơn nữa",
+      "Quantum cốp to,pin tốt đi xa! Sạc nhanh !Giá tốt!tiết kiệm! Đáp ứng khá tốt nhu cầu đi lại hằng ngày! Ửng hộ datbike!tôi đang sử dụng chiếc S3!",
+      "tôi vẫn nghĩ là Datbike nó sẽ xong phim ngay sau shark tank, mà bỗng 1 ngày giật mình thấy đi ra đường ngày nào cũng gặp ít nhất 1 chiếc Datbike, respect cái sự kiên trì của các bạn lắm lắm",
+      "Theo dõi hành trình của Dat Bike từ đầu mới thấy Sơn rất kiên định với bài toán Performance. Thay vì làm xe vỏ đẹp nhưng yếu, bạn này chấp nhận bị chê thiết kế để ưu tiên pin khủng và công suất thực. Đó là bản lĩnh của người làm kỹ thuật, không chạy theo bề nổi.",
+      "Chưa biết Dat bike sẽ còn đi xa cỡ nào nhưng đến đây tôi tin bạn Sơn đã sống 1 đời rực rỡ. Từ bị từ chối không ai đầu tư cho đến hiện tại đã làm ra được chiếc xe điện chuẩn Việt nam, đi xa gần 300 cây, máy khỏe và ngày 1 thấy trên đường nhiều hơn. Nể phục bạn vì đã dám sống hết mình vì đam mê",
+      "Mình thấy ý tưởng này rất hay giúp cho mình nhận ra ngày càng hàng việt nam chất lượng đi cùng giá cả và nó khiến cho hàng việt nam ngày càng mở rộng, uy tín trên sản phẩm tư duy của anh ( Sơn ) cũng rất hay ạ",
+      "Câu chuyện của Sơn rất truyền động lực và cảm hứng. Cảm ơn bạn. Dat Bike đang ngày một là cái tên nặng ký trên thị trường xe máy điện hiện nay, rất tự hào và ửng hộ.",
+      "ngưỡng mộ, tôn trọng Founder Datbike, Cảnh Sơn",
+      "Nói thật thì những chiếc xe mà Dat Bike cho ra đời đều tạo ra một tiêu chuẩn mới tốt hơn cho thị trường xe máy điện: quãng đi được xa với giá thành hợp lý. Trước đó xe điện giá cao ngất mà hiệu năng thì không có gì để cân nhắc. Chúc doanh nghiệp ngày một phát triển",
+      "Khá ấn tượng với bạn Sơn này, chưa có cơ hội để mua xe dat bike nhưng sẽ ủng hộ nếu có mẫu xe phù hợp trong tương lai",
+      "Anh Sơn này có hoài bão lớn, chúc anh thành công",
+      "Xin chào team và mọi người. Cái nhìn đầu tiên với mẫu xe đầu tiên thì mình đã đánh giá, xe điện là phải thế này mới cạnh tranh đường dài với xe máy xăng. Về shape thì xe mang đầy đủ phong cách của 1 chiếc moto chứ không phải scooter đi chợ. Và mình thật sự ngã mũ với tư duy và cả hành trình phát triển thương hiệu datBike.",
+      "xe đi xa, máy khỏe, doanh nghiệp đang dần chứng tỏ vị thế không thua gì các ông lớn trên thị trường. SG giờ mỗi ngày đi cũng gặp 5-7 chiếc Quantum rồi",
+      "Mong là DatBike sẽ có thêm sản phẩm phù hợp hơn đứng ở góc độ người sử dụng, về hiệu xuất của xe hiện tại không có gì để phàn nàn, nhưng đứng dưới góc độ người sử dụng thì đang bị hạn chế tiếp cận với các mẫu Quantum hiện tại. Thêm vào đó, một trong những điểm mà khiến DatBike đang khó scale lên là địa điểm sạc.",
+      "Gia đình mình đang sở hữu một chiếc S1 của db, mình mua vì rất thích và ấn tượng với Sơn. Founder thiện cảm và rất tâm huyết với sản phẩm bản thân tạo nên",
+      "Nhìn chung thì các mẫu xe của db hiện rất cá tính và có hiệu năng chuẩn chỉnh, cần mở rộng hệ sản phẩm hơn, đặc biệt là mẫu dành cho nữ thì sẽ doanh số sẽ tăng vọt. Rất nể những doanh nghiệp tự thân như Dat Bike",
+      "ngưỡng mộ anh này từ hồi coi Shark Tank tới h",
+      "Giờ đi ngoài đường thấy Dat Bike nhiều hơn trước thật, không còn hiếm như hồi đầu"
+    ],
+    "ai_analysis": [
+      {
+        "stt": 1,
+        "noi_dung": "Mình không hiểu tại sao mọi người lại cắt 1 câu nói trong cả 1 cuộc nói chuyện dài như này rồi phán xét anh Sơn này kia.",
+        "cam_xuc": "Trung lập",
+        "y_dinh": "Hỏi đáp"
+      },
+      {
+        "stt": 2,
+        "noi_dung": "Theo dõi hành trình của Dat Bike từ đầu mới thấy Sơn rất biết mình cần gì và đuổi theo nó 1 cách rất nhất quán.",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 3,
+        "noi_dung": "Thị trường khởi nghiệp hiện nay thì Dat Bike là một cái tên rất sáng, dự kiến là sẽ còn vươn xa hơn nữa",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 4,
+        "noi_dung": "Quantum cốp to,pin tốt đi xa! Sạc nhanh !Giá tốt!tiết kiệm! Đáp ứng khá tốt nhu cầu đi lại hằng ngày!",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 5,
+        "noi_dung": "tôi vẫn nghĩ là Datbike nó sẽ xong phim ngay sau shark tank, mà bỗng 1 ngày giật mình thấy đi ra đường ngày nào cũng gặp ít nhất 1 chiếc Datbike, respect cái sự kiên trì của các bạn lắm lắm",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 6,
+        "noi_dung": "Theo dõi hành trình của Dat Bike từ đầu mới thấy Sơn rất kiên định với bài toán Performance.",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 7,
+        "noi_dung": "Chưa biết Dat bike sẽ còn đi xa cỡ nào nhưng đến đây tôi tin bạn Sơn đã sống 1 đời rực rỡ.",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 8,
+        "noi_dung": "Mình thấy ý tưởng này rất hay giúp cho mình nhận ra ngày càng hàng việt nam chất lượng đi cùng giá cả và nó khiến cho hàng việt nam ngày càng mở rộng, uy tín trên sản phẩm tư duy của anh ( Sơn ) cũng rất hay ạ",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 9,
+        "noi_dung": "Câu chuyện của Sơn rất truyền động lực và cảm hứng. Cảm ơn bạn.",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 10,
+        "noi_dung": "ngưỡng mộ, tôn trọng Founder Datbike, Cảnh Sơn",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 11,
+        "noi_dung": "Nói thật thì những chiếc xe mà Dat Bike cho ra đời đều tạo ra một tiêu chuẩn mới tốt hơn cho thị trường xe máy điện:",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 12,
+        "noi_dung": "Khá ấn tượng với bạn Sơn này, chưa có cơ hội để mua xe dat bike nhưng sẽ ủng hộ nếu có mẫu xe phù hợp trong tương lai",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 13,
+        "noi_dung": "Anh Sơn này có hoài bão lớn, chúc anh thành công",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 14,
+        "noi_dung": "Xin chào team và mọi người. Cái nhìn đầu tiên với mẫu xe đầu tiên thì mình đã đánh giá, xe điện là phải thế này mới cạnh tranh đường dài với xe máy xăng.",
+        "cam_xuc": "Trung lập",
+        "y_dinh": "Hỏi đáp"
+      },
+      {
+        "stt": 15,
+        "noi_dung": "xe đi xa, máy khỏe, doanh nghiệp đang dần chứng tỏ vị thế không thua gì các ông lớn trên thị trường.",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 16,
+        "noi_dung": "Mong là DatBike sẽ có thêm sản phẩm phù hợp hơn đứng ở góc độ người sử dụng, về hiệu xuất của xe hiện tại không có gì để phàn nàn, nhưng đứng dưới góc độ người sử dụng thì đang bị hạn chế tiếp cận với các mẫu Quantum hiện tại.",
+        "cam_xuc": "Trung lập",
+        "y_dinh": "Hỏi đáp"
+      },
+      {
+        "stt": 17,
+        "noi_dung": "Gia đình mình đang sở hữu một chiếc S1 của db, mình mua vì rất thích và ấn tượng với Sơn.",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 18,
+        "noi_dung": "Nhìn chung thì các mẫu xe của db hiện rất cá tính và có hiệu năng chuẩn chỉnh, cần mở rộng hệ sản phẩm hơn, đặc biệt là mẫu dành cho nữ thì sẽ doanh số sẽ tăng vọt.",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 19,
+        "noi_dung": "ngưỡng mộ anh này từ hồi coi Shark Tank tới h",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      },
+      {
+        "stt": 20,
+        "noi_dung": "Giờ đi ngoài đường thấy Dat Bike nhiều hơn trước thật, không còn hiếm như hồi đầu",
+        "cam_xuc": "Tích cực",
+        "y_dinh": "Khen ngợi"
+      }
+    ],
+    "sentiment_summary": {
+      "tich_cuc": 19,
+      "tieu_cuc": 0,
+      "trung_lap": 1
+    }
+  },
+  "cost_optimization": {
+    "technique": "Super Batching — gộp metadata + comments vào 1 API call duy nhất",
+    "total_items_analyzed": 21,
+    "api_calls_without_batching": 21,
+    "api_calls_with_super_batching": 1,
+    "savings_percentage": 95.2
+  }
+}
